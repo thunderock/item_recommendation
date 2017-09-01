@@ -11,3 +11,5 @@ unzip ${DIR}/ml-latest-small.zip -d ${DIR}
 
 rm movielens/ml-latest.zip
 rm movielens/ml-latest-small.zip
+
+#install packages

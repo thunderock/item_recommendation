@@ -5,6 +5,8 @@ from py2neo import Graph
 
 def load_dataframe_from_file_path(path):
     raw_data_frame = pd.read_csv(path)
+    raw_data_frame['userId'] = raw_data_frame['userId'] - 1
+    raw_data_frame['dealId'] = raw_data_frame['dealId'] - 1
     raw_data_frame['rating'] = raw_data_frame['rating'].astype(np.float)
     raw_data_frame['user'] = raw_data_frame['userId'].astype(np.int32)
     raw_data_frame['deal'] = raw_data_frame['dealId'].astype(np.int32)
