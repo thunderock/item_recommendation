@@ -4,12 +4,11 @@ import numpy as np
 import argparse
 
 import sys
-root_directory_path = path.abspath('..')
+root_directory_path = path.abspath('')
 sys.path.insert(0, root_directory_path)
 import data_frame as df
 import svd_model as re
 import pandas as pd
-import utilities as ut
 
 parser = argparse.ArgumentParser()
 

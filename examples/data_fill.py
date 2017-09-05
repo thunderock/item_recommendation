@@ -1,9 +1,8 @@
 from os import path
-import numpy as np
 import argparse
 
 import sys
-root_directory_path = path.abspath('..')
+root_directory_path = path.abspath('')
 sys.path.insert(0, root_directory_path)
 import data_frame as df
 import utilities as ut
@@ -11,7 +10,7 @@ import utilities as ut
 parser = argparse.ArgumentParser()
 
 csv_path = root_directory_path + '/movielens/'
-parser.add_argument("-ds", "--data_size", type=str, default='latest', help="data set size (latest 2.5 mn)")
+parser.add_argument("-ds", "--data_size", type=str, default='1m', help="data set size (latest 2.5 mn)")
 
 args = parser.parse_args()
 

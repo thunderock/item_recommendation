@@ -1,13 +1,20 @@
 Tensorflow based Deals Recommendation System
 
-Requirements:
-Python >= 2.7.13
-Tensorflow >= 1.2.1
-Numpy >= 1.13.1
-Pandas >= 0.20.3
-Sklearn >= 0.18.2
+Requirements: Need to install these python libraries
+Python3
+Tensorflow
+Numpy
+Pandas
+py2neo
 
-Please run checking_installation to check if your versions are up to date.
+
+backfilling data from dataset to db
+run this command
+python3 examples/data_fill.py
+you can provide args to pick to pick different datasets
+
+after backfill to run any example:
+python3 filename
 
 Algorithms used:
 k-truncated SVD un-supervised learning

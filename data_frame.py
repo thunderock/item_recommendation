@@ -27,28 +27,6 @@ def load_data_from_db():
     df['deal'] = df['deal'].astype(np.int32)
     return df
 
-
-def count_intersection(df1, df2, df3):
-    from hashlib import sha1
-    raw_array1 = np.array(df1)
-    raw_array2 = np.array(df2)
-    raw_array3 = np.array(df3)
-    array1 = raw_array1.copy(order='C')
-    array2 = raw_array2.copy(order='C')
-    array3 = raw_array3.copy(order='C')
-    set1 = set([sha1(observation).hexdigest()
-                for observation in array1])
-    set2 = set([sha1(observation).hexdigest()
-               for observation in array2])
-    set3 = set([sha1(observation).hexdigest()
-               for observation in array3])
-    dic = {}
-    dic['1-2'] = len(set1.intersection(set2))
-    dic['1-3'] = len(set1.intersection(set3))
-    dic['2-3'] = len(set2.intersection(set3))
-    return dic
-
-
 class DealExtractor(object):
     def __init__(self, df, users, deals, ratings, nsvd_size):
         self.users = users
@@ -122,8 +100,6 @@ class BatchGenerator(object):
         self.size = len(df)
 
     def get_batch(self):
-        #print(self.size)
-        #print(self.batch_size)
         if self.size == 0:
             return np.array([]), np.array([]), np.array([])
         random_indices = np.random.randint(0, self.size, self.batch_size)

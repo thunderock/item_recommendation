@@ -5,7 +5,7 @@ import argparse
 import pandas as pd
 
 import sys
-root_directory_path = path.abspath('..')
+root_directory_path = path.abspath('')
 sys.path.insert(0, root_directory_path)
 import data_frame as df
 import svd_model as re
@@ -41,8 +41,6 @@ else:
     print ("Wrong parameter for size of data points. Running with default, which is latest.\n")
 
 data_frame = df.load_dataframe_from_file_path(csv_path)
-#data_frame = df.load_data_from_db()
-#ut.put_data_frame_in_db(data_frame)
 user_queried = args.user_id
 is_future_prediction = True
 if args.model == "svd":
@@ -63,7 +61,6 @@ if len(model.train) != 0:
     user_example = np.array(ut.get_np_redundant_array(len(deals_example), user_queried))
     predicted_ratings = model.prediction(user_example, deals_example)
     result = pd.DataFrame({'rating': predicted_ratings, 'deal': deals_example})
-    result = result[result['rating'] < 5]
     print("Total number of deals which are not rated : ")
     print(len(result))
     print ("average of all the ratings")
