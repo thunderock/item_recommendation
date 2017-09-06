@@ -9,6 +9,11 @@ py2neo
 
 
 backfilling data from dataset to db
+if you are  using this for first time you need to change password to "cyclops" for code to work. Use this command for that
+:server change-password
+this will ask you to type in old password and new password. To get old default password go to this link:
+https://github.com/neo4j/neo4j/issues/5444
+
 run this command
 python3 examples/data_fill.py
 you can provide args to pick to pick different datasets
