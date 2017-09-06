@@ -47,3 +47,4 @@ target/
 #ignoring useless folders
 examples/checkpoints/
 movielens/
+__pycache__/
