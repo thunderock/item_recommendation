@@ -9,6 +9,7 @@ import utilities as ut
 
 parser = argparse.ArgumentParser()
 
+print sys.path
 csv_path = root_directory_path + '/movielens/'
 parser.add_argument("-ds", "--data_size", type=str, default='1m', help="data set size (latest 2.5 mn)")
 
